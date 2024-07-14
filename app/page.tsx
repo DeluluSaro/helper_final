@@ -1,18 +1,21 @@
 "use client"
 import { Button } from '@/components/ui/button';
+import { FlipWords } from '@/components/ui/flip-words';
 import { WavyBackground } from '@/components/ui/wavy-background'
 import { useRouter } from 'next/navigation';
 export default function Home() {
 
   const router=useRouter()
+  const words = ["better", "perfect", "modern"];
   return (
 
     
-   <div>
-     <div><WavyBackground></WavyBackground></div>
-     <div className='flex flex-col justify-center gap-10 absolute  top-10 text-white justify-center m-[250px] ml-[450px] text-6xl font-bold mt-[-20]'><h1>Get Started</h1>
-     <Button onClick={()=>router.push('/dashboard')}>Let's go</Button>
-     </div>
-   </div>
+   <WavyBackground className='flex flex-col gap-10'> 
+    <h1 className='text-5xl font-bold'>Generate <FlipWords className='text-orange-500' words={words}></FlipWords>content using AI</h1>
+    
+    <div className='flex justify-center '>
+    <Button onClick={()=>router.push('/dashboard')} className='text-white bg-orange-500 p-5 hover:bg-white hover:text-orange-500'>Let's Start</Button>
+    </div>
+   </WavyBackground>
   );
 }
