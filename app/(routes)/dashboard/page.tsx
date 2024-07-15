@@ -5,7 +5,7 @@ function Dashboard() {
   return (
     <div className=''>
 
-       hlikj
+       Dashboard
     </div>
   )
 }
