@@ -1,7 +1,7 @@
 export default [
   {
     name: "Blog title Finder",
-    desc: "When your brian stops thinking find your blog title here.",
+    desc: "When your brian stops thinking,find your blog title here.",
     category: "blog",
     icon: "https://cdn-icons-png.flaticon.com/128/3959/3959542.png",
     aiprompt:
@@ -45,7 +45,7 @@ export default [
     category: "blog",
     icon: "https://cdn-icons-png.flaticon.com/128/2593/2593549.png",
     aiprompt:
-      "Generate blog content based on the given details and outline of the title ,give output in  Rich Text Editor Format",
+      "Generate blog content based on the given details and outline of the topic,give output in  Rich Text Editor Format",
     gibberish: "blog-content-generation",
     form: [
       {
@@ -69,7 +69,7 @@ export default [
     icon: "https://cdn-icons-png.flaticon.com/128/1383/1383260.png",
     aiprompt:
       "Suggest 5 Youtube title ideas based on the given details and outline , give answers in bullet with Rich Text Editor Format ",
-    gibberish: "suggest-blog-title",
+    gibberish: "suggest-youtube-title",
     form: [
       {
         label: "Enter about your Youtube video details",
@@ -86,30 +86,13 @@ export default [
     ],
   },
   {
-    name: "Blog Topics Ideas",
-    desc: "Take idea from me,Helper suggests you the best.",
-    category: "blog",
-    icon: "https://cdn-icons-png.flaticon.com/128/2988/2988036.png",
-    aiprompt:
-      "Suggest 5 blog topic to user according to the details, give answers in bullet with Rich Text Editor Format",
-    gibberish: "blog-topic-suggestion",
-    form: [
-      {
-        label: "Enter about your blog details",
-        field: "input",
-        name: "details",
-        required: true,
-      },
-    ],
-  },
-  {
     name: "Youtube video Content Generator",
     desc: "Helper bro is expert in this may be ,he can help with your content.",
     category: "youtube",
     icon: "https://cdn-icons-png.flaticon.com/128/2522/2522649.png",
     aiprompt:
       "Generate youtube video content based on the given details ,give output in Rich Text Editor Format",
-    gibberish: "blog-content-generation",
+    gibberish: "youtube-content-generation",
     form: [
       {
         label: "Enter about your Youtube title or keywords",
@@ -160,7 +143,7 @@ export default [
       {
         label: "Enter related keywords of your reasearch paper",
         field: "textarea",
-        name: "details",
+        name: "keywords",
         required: true,
       },
     ],
