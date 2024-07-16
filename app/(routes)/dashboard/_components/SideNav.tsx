@@ -18,7 +18,7 @@ function SideNav() {
         </div>
         <div>
             <ul className='flex flex-col gap-2'>
-                <li className={`flex gap-2 items-center font-bold bg-white p-2 rounded-2xl text-orange-400 hover:text-white hover:bg-orange-400 cursor-pointer border-gray-200 border ${path=='/dashboard'&&'bg-black text-white '}`}><Home></Home>Home</li>
+                <li className={`flex gap-2 items-center font-bold bg-white p-2 rounded-2xl text-orange-400 hover:text-white hover:bg-orange-400 cursor-pointer border-gray-200 border ${path=='/dashboard'&&' text-black '}`}><Home></Home>Home</li>
                 <li className={`flex gap-2 items-center font-bold bg-white p-2 rounded-2xl text-orange-400 hover:text-white hover:bg-orange-400  cursor-pointer border-gray-200 border ${path=='/dashboard/history'&&'bg-black text-white'} `}><History></History>History</li>
                 <li className={`flex gap-2 items-center font-bold bg-white p-2 rounded-2xl text-orange-400 hover:text-white hover:bg-orange-400  cursor-pointer border-gray-200 border ${path=='/dashboard/billing'&&'bg-black text-white'}`}><Receipt></Receipt>Billing</li>
                 <li className={`flex gap-2 items-center font-bold bg-white p-2 rounded-2xl text-orange-400 hover:text-white hover:bg-orange-400  cursor-pointer border-gray-200 border ${path=='/dashboard/setting'&&'bg-black text-white'}`}><Cog></Cog>Setting</li>
