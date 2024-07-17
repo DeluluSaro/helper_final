@@ -15,10 +15,10 @@ export function BrowseTemplates({onSearch}:any) {
         {/* Gradients */}
         <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-[#FFFFE0] to-transparent h-[2px] w-3/4 blur-sm" />
         <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-[#FFE0B2] to-transparent h-px w-3/4" />
-        <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-[#FF6333] to-transparent h-[5px] w-1/4 blur-sm" />
-        <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-[#FF6333] to-transparent h-px w-1/4" />
+        {/* <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-[#7fff00] to-transparent h-[5px] w-1/4 blur-sm" /> */}
+        <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-[#7fff00] to-transparent h-px w-1/4" />
         <div className="flex  items-center gap-3 absolute justify-center mt-10 ml-[170px] bg-transparent border p-1 rounded-full z-10">
-          <Search className="text-orange-500"></Search>
+          <Search className="text-[#7fff00]"></Search>
           <Input onChange={(event)=>onSearch(event.target.value)} className="bg-transparent border-none rounded-full font-bold text-white"></Input>
         </div>
         {/* Core component */}
@@ -28,7 +28,7 @@ export function BrowseTemplates({onSearch}:any) {
           maxSize={1}
           particleDensity={1200}
           className="w-full h-full"
-          particleColor="#ff1000"
+          particleColor="#7fff00"
         />
 
         {/* Radial Gradient to prevent sharp edges */}

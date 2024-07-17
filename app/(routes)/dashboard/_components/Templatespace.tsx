@@ -33,8 +33,8 @@ function Templatespace({onSearchInput}:any) {
  }
   },[onSearchInput])
   return (
-    <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mt-4 '>{templateList.map((item:TEMPLATE,index:number)=>(
-            <div onClick={()=>router.push('/dashboard/content/'+item?.gibberish)} className='flex flex-col border p-5 bg-white shadow-md gap-3 hover:scale-105 cursor-pointer rounded-md hover:shadow-lg hover:shadow-orange-400 transition-all duration-700'>
+    <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mt-4 '>{templateList.map((item:TEMPLATE|any,index:number)=>(
+            <div onClick={()=>router.push('/dashboard/content/'+item?.gibberish)} className='flex flex-col border p-5 bg-white shadow-md gap-3 hover:scale-105 cursor-pointer rounded-md hover:shadow-md hover:shadow-[#7fff00]   transition-all duration-700'>
             <Image src={item.icon} alt='img' width={50} height={50}></Image>
             <h1 className='font-bold'>{item.name}</h1>
             <p className='text-xs'>{item.desc}</p>

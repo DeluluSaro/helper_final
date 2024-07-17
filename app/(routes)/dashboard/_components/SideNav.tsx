@@ -21,16 +21,16 @@ function SideNav() {
   const router=useRouter()
   return (
     <div className='h-screen p-5 shadow-md flex flex-col justify-between'>
-        <div className='flex flex-col justify-center bg-orange-500 rounded-full items-center'>
+        <div className='flex flex-col justify-center bg-[#7fff00] rounded-full items-center'>
         <Image src={'/logo.png'} className= ' z-40 p-2 rounded-full cursor-pointer hover:animate-bounce transition-all duration-1000' alt='logo' width={120} height={50}></Image>
         <h1 className='absolute mt-20 text-xs'><FlipWords words={words}></FlipWords></h1>
         </div>
         <div>
             <ul className='flex flex-col gap-2'>
-                <li onClick={()=>router.push('/dashboard')} className={`flex gap-2 items-center font-bold bg-white p-2 rounded-2xl text-orange-400 hover:text-white hover:bg-orange-400 cursor-pointer border-gray-200 border ${path==p1&&'bg-black'}`}><Home></Home>Home</li>
-                <li className={`flex gap-2 items-center font-bold bg-white p-2 rounded-2xl text-orange-400 hover:text-white hover:bg-orange-400  cursor-pointer border-gray-200 border ${path==p2&&'bg-black text-white'} `}><History></History>History</li>
-                <li className={`flex gap-2 items-center font-bold bg-white p-2 rounded-2xl text-orange-400 hover:text-white hover:bg-orange-400  cursor-pointer border-gray-200 border ${path==p3&&'bg-black text-white'}`}><Receipt></Receipt>Billing</li>
-                <li className={`flex gap-2 items-center font-bold bg-white p-2 rounded-2xl text-orange-400 hover:text-white hover:bg-orange-400  cursor-pointer border-gray-200 border ${path==p4&&'bg-black text-white'}`}><Cog></Cog>Setting</li>
+                <li onClick={()=>router.push('/dashboard')} className={`flex gap-2 items-center font-bold bg-white p-2 rounded-2xl text-[#7fff00] hover:text-white hover:bg-[#7fff00] cursor-pointer border-gray-200 border ${path==p1&&'bg-black'}`}><Home></Home>Home</li>
+                <li className={`flex gap-2 items-center font-bold bg-white p-2 rounded-2xl text-[#7fff00] hover:text-white hover:bg-[#7fff00]  cursor-pointer border-gray-200 border ${path==p2&&'text-black'} `}><History></History>History</li>
+                <li className={`flex gap-2 items-center font-bold bg-white p-2 rounded-2xl text-[#7fff00] hover:text-white hover:bg-[#7fff00]  cursor-pointer border-gray-200 border ${path==p3&&'bg-black text-white'}`}><Receipt></Receipt>Billing</li>
+                <li className={`flex gap-2 items-center font-bold bg-white p-2 rounded-2xl text-[#7fff00] hover:text-white hover:bg-[#7fff00]  cursor-pointer border-gray-200 border ${path==p4&&'bg-black text-white'}`}><Cog></Cog>Setting</li>
             </ul>
         </div>
         <div className='flex justify-start'>

@@ -15,10 +15,10 @@ export default [
         required: true,
       },
       {
-        label: "Enter about your blog outline",
+        label: "Enter about your blog outline (optional)",
         field: "textarea",
         name: "outline",
-        required: true,
+        
       },
     ],
   },
@@ -55,7 +55,7 @@ export default [
         required: true,
       },
       {
-        label: "Enter about your blog keywords",
+        label: "Enter about your blog keywords (optional)",
         field: "textarea",
         name: "keywords",
         required: true,
@@ -78,10 +78,10 @@ export default [
         required: true,
       },
       {
-        label: "Enter about your Youtube video outline",
+        label: "Enter about your Youtube video outline (optional)",
         field: "textarea",
         name: "outline",
-        required: true,
+        
       },
     ],
   },
@@ -146,6 +146,24 @@ export default [
         name: "keywords",
         required: true,
       },
+    ],
+  },
+  {
+    name: "Email Template Writer",
+    desc: "Write any E-mail templates with Helper.ai in a click",
+    category: "Email",
+    icon: "https://cdn-icons-png.flaticon.com/128/732/732200.png",
+    aiprompt:
+      "Generate e-mail template for the given topic,give output in Rich Text Editor format.",
+    gibberish: "email-temp-generation",
+    form: [
+      {
+        label: "Enter Email Topic",
+        field: "textarea",
+        name: "topic",
+        required: true,
+      },
+    
     ],
   },
 

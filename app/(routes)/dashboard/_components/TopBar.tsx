@@ -10,14 +10,14 @@ function TopBar() {
           <Search></Search>
           <Input className="border-none hover:border-none  rounded-full "></Input>
         </div>
-        <div className="flex gap-2 bg-orange-500 p-2 rounded-full text-white hover:shadow-lg font-bold text-xs items-center hover:shadow-orange-300 cursor-pointer">
+        <div className="flex gap-2 bg-[#7fff00] p-2 rounded-full text-white hover:shadow-lg font-bold text-xs items-center hover:shadow-[#7acb7ab6] cursor-pointer">
           <Ship></Ship>
           <p className="">Join Membership for $9</p>
         </div>
         
       </div>
 
-      <hr  className="border border-orange-500"/>
+      <hr  className="border border-[#7fff00]"/>
 
 
     </div>
