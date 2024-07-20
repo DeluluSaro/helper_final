@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import FormSection from "./_components/FormSection";
 import OutputSection from "./_components/OutputSection";
 import Template from "@/app/(data)/Template";
@@ -12,6 +12,8 @@ import { db } from "@/Backend/db";
 import { AIResult } from "@/Backend/schema";
 import { useUser } from "@clerk/nextjs";
 import moment from "moment";
+import { TotalUsageContext } from "@/app/(context)/TotalUsageContext";
+
 interface PROPS {
   params: {
     template: string;
@@ -22,8 +24,14 @@ function CursePage(dynaname: PROPS) {
     (item) => item.gibberish == dynaname.params["template"]
   );
   const [loading, setLoading] = useState(false);
+
   const [aiResult, setAiResult] = useState<string>("");
+  const {totWords,setTotalWords}=useContext(TotalUsageContext)
   const generateAI = async (formData: any) => {
+  //  if(totWords>=10000){
+  //   router.push('/dashboard/billing')
+  //   return ;
+  //  }
     // write logic
     setLoading(true);
     const TempPrompt = selectedTemplate.aiprompt;

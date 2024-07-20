@@ -43,16 +43,16 @@ function SideNav() {
             <Home></Home>Home
           </li>
            <li  onClick={()=>router.push('/dashboard/history')} className={`flex gap-2 items-center font-bold bg-white p-2 rounded-2xl text-[#7fff00] hover:text-white hover:bg-[#7fff00]  cursor-pointer border-gray-200 border ${path==p2&&'text-black'} `}><History></History>History</li> 
-          <li
+          <li onClick={()=>router.push('/dashboard/billing')}
             className={`flex gap-2 items-center font-bold bg-white p-2 rounded-2xl text-[#7fff00] hover:text-white hover:bg-[#7fff00]  cursor-pointer border-gray-200 border ${
-              path == p3 && "bg-black text-white"
+              path == p3 && " text-black"
             }`}
           >
             <Receipt></Receipt>Billing
           </li>
           <li
             className={`flex gap-2 items-center font-bold bg-white p-2 rounded-2xl text-[#7fff00] hover:text-white hover:bg-[#7fff00]  cursor-pointer border-gray-200 border ${
-              path == p4 && "bg-black text-white"
+              path == p4 && "text-black"
             }`}
           >
             <Cog></Cog>Setting

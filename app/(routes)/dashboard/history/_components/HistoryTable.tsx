@@ -42,17 +42,17 @@ const getData=async()=>{
     {loading?<div className='flex justify-center text-center items-center'>Loading please Wait..<SplitIcon className='animate-spin'></SplitIcon></div>:<div className='grid  gap-5'>
   <div className='flex gap-36 font-bold text-[#7fff10]'>
     <h1>Template</h1>
-    <h1>Response</h1>
+    <h1 className='ml-16'>Response</h1>
     <h1 className='ml-20'>Data</h1>
-    <h1>CreatedBy</h1>
+    <h1 className='-ml-6'>To Use</h1>
   </div>
         {datum.map((item:HISTORY,index:number)=>(
             <div className=''>
-                <div className='flex gap-20 shadow-lg items-center'>
+                <div className='flex gap-20 ml-3 shadow-lg items-center'>
                     <h1 className='text-xs w-full'>{item?.formData.replace('{','').replace('}','').replace('"',"").replace('"','').replace('topic:','')}</h1>
-                    <p className='line-clamp-4'>{item?.result.replace('##','').replace('```','').replace('```','').replace("**",'').replace('**','')}</p>
+                    <p className='line-clamp-4 w-[250px] -ml-[700px]'>{item?.result.replace('##','').replace('```','').replace('```','').replace("**",'').replace('**','')}</p>
                     <h1>{item?.createdAt}</h1>
-                    <h1>{item?.createdBy}</h1>
+                    <h1 onClick={()=>{navigator.clipboard.writeText(item?.result)}} className='cursor-pointer hover:text-black text-[#7fff01]'>copy</h1>
                     
                 </div>
             </div>

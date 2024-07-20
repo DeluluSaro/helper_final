@@ -1,10 +1,14 @@
 "use client"
+import type { Metadata } from "next";
 import { Button } from '@/components/ui/button';
 import { FlipWords } from '@/components/ui/flip-words';
 import { WavyBackground } from '@/components/ui/wavy-background'
 import { useRouter } from 'next/navigation';
 export default function Home() {
-
+  const metadata: Metadata = {
+    title: "Helper.ai",
+    description: "Generated quality content easily",
+  };
   const router=useRouter()
   const words = ["better", "perfect", "modern"];
   return (

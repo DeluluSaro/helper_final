@@ -4,11 +4,12 @@ import { AIResult } from '@/Backend/schema'
 import { Button } from '@/components/ui/button'
 import { useUser } from '@clerk/nextjs'
 import { eq } from 'drizzle-orm'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { HISTORY } from '../history/page'
+import { TotalUsageContext } from '@/app/(context)/TotalUsageContext'
 
 function CreditTracker() {
-    const[totWords,setTotalWords]=useState<number>(0)
+    const{totWords,setTotalWords}=useContext(TotalUsageContext)
  const {user}=useUser()
     const GetData=async()=>{
         {/*  @ts-ignore */}

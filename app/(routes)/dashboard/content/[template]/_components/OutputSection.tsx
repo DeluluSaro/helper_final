@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react'
 import '@toast-ui/editor/dist/toastui-editor.css';
-
 import { Editor } from '@toast-ui/react-editor';
 import { HoverBorderGradient } from '@/components/ui/hover-border-gradient';
 import { CopyCheck } from 'lucide-react';
+
 
 interface props{
   aiResult:any
@@ -28,7 +28,7 @@ function OutputSection({aiResult}:props) {
     <h1 className='text-2xl font-bold'>Your Results</h1>
    
  
-      <HoverBorderGradient   className='flex bg-white text-black gap-2 hover:font-bold transition-all duration-1000 ' onClick={()=>{}}><CopyCheck></CopyCheck>copy</HoverBorderGradient>
+      <HoverBorderGradient    className='flex bg-white text-black gap-2 hover:font-bold transition-all duration-1000 ' onClick={()=>{navigator.clipboard.writeText(aiResult)}}><CopyCheck></CopyCheck>copy</HoverBorderGradient>
     
     </div>
     <div>
