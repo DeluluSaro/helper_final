@@ -19,7 +19,7 @@ function SideNav() {
   console.log(path);
   const router = useRouter();
   return (
-    <div className="h-screen p-5 shadow-md flex flex-col justify-between">
+    <div className="h-screen p-5 mb-5 shadow-md flex flex-col justify-between">
       <div className="flex flex-col justify-center bg-[#7fff00] rounded-full items-center">
         <Image
           src={"/logo.png"}
@@ -42,7 +42,7 @@ function SideNav() {
           >
             <Home></Home>Home
           </li>
-          {/* <li  onClick={()=>router.push('/dashboard/history')} className={`flex gap-2 items-center font-bold bg-white p-2 rounded-2xl text-[#7fff00] hover:text-white hover:bg-[#7fff00]  cursor-pointer border-gray-200 border ${path==p2&&'text-black'} `}><History></History>History</li> */}
+           <li  onClick={()=>router.push('/dashboard/history')} className={`flex gap-2 items-center font-bold bg-white p-2 rounded-2xl text-[#7fff00] hover:text-white hover:bg-[#7fff00]  cursor-pointer border-gray-200 border ${path==p2&&'text-black'} `}><History></History>History</li> 
           <li
             className={`flex gap-2 items-center font-bold bg-white p-2 rounded-2xl text-[#7fff00] hover:text-white hover:bg-[#7fff00]  cursor-pointer border-gray-200 border ${
               path == p3 && "bg-black text-white"

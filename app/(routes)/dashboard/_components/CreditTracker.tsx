@@ -38,7 +38,7 @@ user&&GetData()
         <div className='bg-[#7fff10] p-2 rounded-lg'>
             <h1 className='font-bold'>Credits</h1>
 
-            <div className='h-2 bg-[#00000062] w-full rounded-lg mt-4'>
+            <div className='h-2 bg-[#00000062] w-full rounded-lg '>
        <div className='h-2 bg-white rounded-lg' style={{width:(totWords/10000)*100+"%   "}}></div>
             </div>
             <h2 className='text-xs my-2'>{totWords}/10,000 words used</h2>

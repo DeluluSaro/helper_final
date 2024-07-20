@@ -5,33 +5,60 @@ import { useUser } from '@clerk/nextjs'
 import { eq } from 'drizzle-orm'
 
 import React, { useEffect, useState } from 'react'
+import { HISTORY } from '../page'
+import { SplitIcon } from 'lucide-react'
 
 function HistoryTable() {
 const {user}=useUser()
-const email=user?.primaryEmailAddress?.emailAddress
+const [datum,setDatum]=useState<any>([])
+const [selectedTemplate,setSelectedTemplate]=useState([])
+const [loading,setLoading]=useState(false)
+useEffect(()=>{
+user&&getData()
+},[user])
+const getData=async()=>{
+    setLoading(true)
+ {/*  @ts-ignore */}
+
+    const result:HISTORY[]=await db.select().from(AIResult).where(eq(user?.primaryEmailAddress?.emailAddress,AIResult.createdBy))
+     setDatum(result)
+     console.log(result)
+     setLoading(false)
+
+}
+
+
 
 
 
  
   return (
-  <div>
-      <div className='grid lg:grid-cols-10 p-2 '>
-        <div className='col-span-4'>
-            <h1 className='font-bold'>Template</h1>
-        </div>
-        <div className='col-span-4'>
-            <h1 className='font-bold'>Ai Resp</h1>
-        </div>
-        <div className='col-span-1'>
-            <h1 className='font-bold'>Date</h1>
-        </div>
-        <div className='col-span-1'>
-            <h1 className='font-bold'>Created By</h1>
-        </div>
+  <div className=''>
+     
         
         
 
-    </div>
+    
+    {loading?<div className='flex justify-center text-center items-center'>Loading please Wait..<SplitIcon className='animate-spin'></SplitIcon></div>:<div className='grid  gap-5'>
+  <div className='flex gap-36 font-bold text-[#7fff10]'>
+    <h1>Template</h1>
+    <h1>Response</h1>
+    <h1 className='ml-20'>Data</h1>
+    <h1>CreatedBy</h1>
+  </div>
+        {datum.map((item:HISTORY,index:number)=>(
+            <div className=''>
+                <div className='flex gap-20 shadow-lg items-center'>
+                    <h1 className='text-xs w-full'>{item?.formData.replace('{','').replace('}','').replace('"',"").replace('"','').replace('topic:','')}</h1>
+                    <p className='line-clamp-4'>{item?.result.replace('##','').replace('```','').replace('```','').replace("**",'').replace('**','')}</p>
+                    <h1>{item?.createdAt}</h1>
+                    <h1>{item?.createdBy}</h1>
+                    
+                </div>
+            </div>
+        
+        ))}
+    </div>}
    
   </div>
   )
