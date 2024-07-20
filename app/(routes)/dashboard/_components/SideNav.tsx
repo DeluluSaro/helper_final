@@ -51,6 +51,7 @@ function SideNav() {
             <Receipt></Receipt>Billing
           </li>
           <li
+          onClick={()=>router.push('/dashboard/setting')}
             className={`flex gap-2 items-center font-bold bg-white p-2 rounded-2xl text-[#7fff00] hover:text-white hover:bg-[#7fff00]  cursor-pointer border-gray-200 border ${
               path == p4 && "text-black"
             }`}
