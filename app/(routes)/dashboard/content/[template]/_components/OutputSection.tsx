@@ -1,11 +1,20 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import '@toast-ui/editor/dist/toastui-editor.css';
 
 import { Editor } from '@toast-ui/react-editor';
 import { HoverBorderGradient } from '@/components/ui/hover-border-gradient';
 import { CopyCheck } from 'lucide-react';
-function OutputSection() {
+
+interface props{
+  aiResult:any
+}
+function OutputSection({aiResult}:props) {
   const editorRef:any=useRef()
+
+  useEffect(()=>{
+  const editorChange=editorRef.current.getInstance()
+  editorChange.setMarkdown(aiResult)
+  },[aiResult])
   return (
 
  <div>

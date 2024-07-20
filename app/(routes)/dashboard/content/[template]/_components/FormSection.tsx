@@ -5,11 +5,13 @@ import Image from "next/image";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import { Heading1, LoaderPinwheel } from "lucide-react";
 interface SELECTTEMPLATE {
   selectedTemplate?: TEMPLATE;
-  userFormData:any
+  userFormData:any,
+  loading:boolean,
 }
-function FormSection({ selectedTemplate,userFormData }: SELECTTEMPLATE | any) {
+function FormSection({ selectedTemplate,userFormData,loading }: SELECTTEMPLATE | any) {
   const onSubmit = (e: any) => {
     e.preventDefault();
     userFormData(formData)
@@ -59,7 +61,10 @@ function FormSection({ selectedTemplate,userFormData }: SELECTTEMPLATE | any) {
           type="submit"
           className="w-full text-center flex justify-center items-center mt-5 bg-[#7fff00] "
         >
-          Generate content
+          {loading?<div className="flex gap-2">
+            <h1>Processing AI magic... </h1>
+            <LoaderPinwheel className="animate-spin"></LoaderPinwheel>
+          </div>:<h1>Generate Content</h1>}
         </Button>
       </form>
     </div>
