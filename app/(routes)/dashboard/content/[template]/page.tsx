@@ -13,6 +13,7 @@ import { AIResult } from "@/Backend/schema";
 import { useUser } from "@clerk/nextjs";
 import moment from "moment";
 import { TotalUsageContext } from "@/app/(context)/TotalUsageContext";
+import { UserSubscriptContext } from "@/app/(context)/UserSubscriptionContext";
 
 interface PROPS {
   params: {
@@ -27,11 +28,12 @@ function CursePage(dynaname: PROPS) {
 
   const [aiResult, setAiResult] = useState<string>("");
   const {totWords,setTotalWords}=useContext(TotalUsageContext)
+  const{subscription,setSubscription}=useContext(UserSubscriptContext)
   const generateAI = async (formData: any) => {
-  //  if(totWords>=10000){
-  //   router.push('/dashboard/billing')
-  //   return ;
-  //  }
+   if(totWords>=10000&&!subscription){
+    router.push('/dashboard/billing')
+    return ;
+   }
     // write logic
     setLoading(true);
     const TempPrompt = selectedTemplate.aiprompt;
@@ -44,6 +46,7 @@ function CursePage(dynaname: PROPS) {
       result?.response.text()
     );
     setLoading(false);
+    
   };
   const { user } = useUser();
   const saveData = async (formData: any, gibberish: any, aiResult: any) => {

@@ -2,15 +2,17 @@
 import { Button } from '@/components/ui/button'
 import { Meteors } from '@/components/ui/meteors'
 import { Loader2Icon, TicketCheck } from 'lucide-react'
-import React,{useState} from 'react'
+import React,{useContext, useState} from 'react'
 import axio from 'axios'
 import { error } from 'console'
 import { db } from '@/Backend/db'
 import { UserSubscription } from '@/Backend/schema'
 import { useUser } from '@clerk/nextjs'
 import moment from 'moment'
+import { UserSubscriptContext } from '@/app/(context)/UserSubscriptionContext'
 function Billing() {
   const [loading,setLoading]=useState(false)
+  const{subscription,setSubscription}=useContext(UserSubscriptContext)
   const CreateSubscription=()=>{
     setLoading(true)
     axio.post('/api/create-subscription',{})
@@ -97,7 +99,7 @@ rzrpy.open()
           <TicketCheck></TicketCheck>1Yr of History can be seen
           </p>
  
-         <Button disabled={loading} onClick={()=>CreateSubscription()} variant={'outline'} className='hover:bg-black hover:text-white'>{loading?<Loader2Icon className='animate-spin'></Loader2Icon>:<h1>Get Started</h1>}</Button>
+         <Button disabled={loading} onClick={()=>CreateSubscription()} variant={'outline'} className='hover:bg-black hover:text-white'>{loading?<Loader2Icon className='animate-spin'></Loader2Icon>:<h1>{subscription?'Plan activated Succesfully':'Get Started'}</h1>}</Button>
  
           {/* Meaty part - Meteor effect */}
           <Meteors number={50} />
