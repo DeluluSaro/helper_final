@@ -108,19 +108,19 @@ export default [
     category: "coding",
     icon: "https://cdn-icons-png.flaticon.com/128/3242/3242257.png",
     aiprompt:
-      "Generate code based on the given topic and programming language  ,give output in Rich Text Editor Format",
+      "Generate code with specified  language and topic and give it in rich text editor format.",
     gibberish: "code-generator",
     form: [
       {
         label: "Enter coding topic ",
         field: "input",
-        name: "details",
+        name: "topic",
         required: true,
       },
       {
         label: "Enter Programming language ",
         field: "textarea",
-        name: "details",
+        name: "language",
         required: true,
       },
     ],
