@@ -131,7 +131,7 @@ export default [
     category: "research",
     icon: "https://cdn-icons-png.flaticon.com/128/2717/2717575.png",
     aiprompt:
-      "Generate 10 reasearch paper names based on the given details and keywords provided,give output in Rich Text Editor format.",
+      "Generate 10 reasearch paper names based on the given details and keywords provided with citation of all the reasearch paper generated,give output in Rich Text Editor format.",
     gibberish: "reasearch-paper-name-generator",
     form: [
       {
@@ -169,3 +169,5 @@ export default [
  
 
 ];
+
+
